@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widgets/app_drawer.dart';
 
 class SupportScreen extends StatefulWidget {
   const SupportScreen({super.key});
@@ -40,6 +41,7 @@ class _SupportScreenState extends State<SupportScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3F4F6),
+      endDrawer: const AppDrawer(),
 
       // ---------------- APP BAR ----------------
       appBar: AppBar(
@@ -58,9 +60,11 @@ class _SupportScreenState extends State<SupportScreen> {
         ),
         centerTitle: true,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.menu, color: Color(0xFF3E5F8A)),
-            onPressed: () => Scaffold.of(context).openEndDrawer(),
+          Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(Icons.menu, color: Color(0xFF3E5F8A)),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+            ),
           ),
         ],
       ),

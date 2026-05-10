@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import '../chat/chat_screen.dart';
+import '../forum/forum_screen.dart';
 import '../../widgets/app_drawer.dart';
 
 class SubcategoriesScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _SubcategoriesScreenState extends State<SubcategoriesScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ChatScreen(
+        builder: (context) => ForumScreen(
           subcategoryId: subcategory['id'],
           subcategoryName: subcategory['name'],
         ),

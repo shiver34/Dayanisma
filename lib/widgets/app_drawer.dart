@@ -4,6 +4,7 @@ import '../features/profile/profile_screen.dart';
 import '../features/auth/auth_screen.dart';
 import '../features/about/about_screen.dart';
 import '../features/support/support_screen.dart';
+import '../features/diabetes/diabetes_risk_screen.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -169,6 +170,19 @@ class _AppDrawerState extends State<AppDrawer> {
                         Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(
                             builder: (_) => const SupportScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    _DrawerItem(
+                      icon: Icons.monitor_heart,
+                      title: 'Diyabet Risk Hesaplama',
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const DiabetesRiskScreen(),
                           ),
                         );
                       },

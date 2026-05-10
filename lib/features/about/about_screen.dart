@@ -1,5 +1,6 @@
 // lib/features/about/about_screen.dart
 import 'package:flutter/material.dart';
+import '../../widgets/app_drawer.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -8,6 +9,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3F4F6),
+      endDrawer: const AppDrawer(),
 
       // ---------------- APP BAR ----------------
       appBar: AppBar(
@@ -26,9 +28,11 @@ class AboutScreen extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.menu, color: Color(0xFF335C85)),
-            onPressed: () => Scaffold.of(context).openEndDrawer(),
+          Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(Icons.menu, color: Color(0xFF335C85)),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+            ),
           ),
         ],
       ),
